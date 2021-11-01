@@ -109,11 +109,6 @@ void XPackageKitTransaction::onTransactionFinished(PackageKit::Transaction::Exit
     }
 }
 
-void XPackageKitTransaction::onTransactionMessage(PackageKit::Transaction::Message type, const QString &message)
-{
-    xDebug() << type << message;
-}
-
 void XPackageKitTransaction::onTransactionItemProgress(const QString &itemID, PackageKit::Transaction::Status pkStatus, uint percentage)
 {
     xDebug() << itemID << pkStatus << percentage;
@@ -136,7 +131,6 @@ void XPackageKitTransaction::startEvent()
     PackageKit::Transaction *tx = createTransaction();
     connect(tx, &PackageKit::Transaction::finished, this, &XPackageKitTransaction::onTransactionFinished);
     connect(tx, &PackageKit::Transaction::errorCode, this, &XPackageKitTransaction::onTransactionErrorCode);
-    connect(tx, &PackageKit::Transaction::message, this, &XPackageKitTransaction::onTransactionMessage);
     connect(tx, &PackageKit::Transaction::itemProgress, this, &XPackageKitTransaction::onTransactionItemProgress);
 #ifdef NEMO_PACKAGE_KIT
     connect(tx, &PackageKit::Transaction::changed, this, &XPackageKitTransaction::onTransactionStatusChanged);

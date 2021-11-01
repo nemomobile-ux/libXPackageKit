@@ -29,7 +29,6 @@ public:
 private slots:
     virtual void onTransactionErrorCode(PackageKit::Transaction::Error error, const QString &details);
     virtual void onTransactionFinished(PackageKit::Transaction::Exit exitStatus, uint runtime);
-    virtual void onTransactionMessage(PackageKit::Transaction::Message type, const QString &message);
     virtual void onTransactionItemProgress(const QString &itemID, PackageKit::Transaction::Status pkStatus, uint percentage);
 
     virtual void onTransactionStatusChanged();

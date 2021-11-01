@@ -123,7 +123,7 @@ PackageKit::Transaction *PackageKitBackend::mkGetDependsTransaction(const QStrin
     rpc = new PackageKit::Transaction();
     rpc->getDepends(packageIds, filters);
 #else
-    rpc = PackageKit::Daemon::getDepends(packageIds, filters);
+    rpc = PackageKit::Daemon::dependsOn(packageIds, filters);
 #endif
     return rpc;
 }
@@ -135,7 +135,7 @@ PackageKit::Transaction *PackageKitBackend::mkGetRequiresTransaction(const QStri
     rpc = new PackageKit::Transaction();
     rpc->getRequires(packageIds, filters);
 #else
-    rpc = PackageKit::Daemon::getRequires(packageIds, filters);
+    rpc = PackageKit::Daemon::requiredBy(packageIds, filters);
 #endif
     return rpc;
 }
