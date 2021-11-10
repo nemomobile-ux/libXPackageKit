@@ -16,7 +16,7 @@ public:
 protected:
     void startEvent() override;
 
-private slots:
+private Q_SLOTS:
     void onProcessFinished(int exitCode);
     void onProcessStateChanged(QProcess::ProcessState state);
 

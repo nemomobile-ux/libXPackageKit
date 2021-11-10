@@ -10,7 +10,7 @@ class XUpdateTransaction : public XPackageKitTransaction
 public:
     XUpdateTransaction(QObject *parent = nullptr);
 
-private slots:
+private Q_SLOTS:
     void onTransactionPackage(PackageKit::Transaction::Info info, const QString &packageID, const QString &summary);
 
 protected:

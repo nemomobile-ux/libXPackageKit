@@ -10,7 +10,7 @@ class XRemoveTransaction : public XPackageKitTransaction
 public:
     XRemoveTransaction(QObject *parent = nullptr);
 
-private slots:
+private Q_SLOTS:
     void onTransactionPackage(PackageKit::Transaction::Info info, const QString &packageID, const QString &summary);
 
 protected:

@@ -26,7 +26,7 @@ public:
     static QString packageArch(const QString &pkgId);
     static QString packageData(const QString &pkgId);
 
-private slots:
+private Q_SLOTS:
     virtual void onTransactionErrorCode(PackageKit::Transaction::Error error, const QString &details);
     virtual void onTransactionFinished(PackageKit::Transaction::Exit exitStatus, uint runtime);
     virtual void onTransactionItemProgress(const QString &itemID, PackageKit::Transaction::Status pkStatus, uint percentage);

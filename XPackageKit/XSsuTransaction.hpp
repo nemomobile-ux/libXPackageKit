@@ -22,7 +22,7 @@ public:
     };
     Q_ENUM(SsuRepoAction)
 
-protected slots:
+protected Q_SLOTS:
     void onSsuCallReply(QDBusPendingCallWatcher *watcher);
 
 protected:

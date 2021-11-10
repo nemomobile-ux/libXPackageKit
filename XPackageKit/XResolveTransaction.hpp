@@ -13,7 +13,7 @@ public:
 protected:
     PackageKit::Transaction *createTransaction() override;
 
-private slots:
+private Q_SLOTS:
     void onTransactionPackage(PackageKit::Transaction::Info info, const QString &packageID, const QString &summary);
 };
 

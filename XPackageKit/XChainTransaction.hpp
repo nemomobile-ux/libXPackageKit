@@ -22,14 +22,14 @@ public:
     uint transactionsMaxCount() const;
     void setTransactionsMaxCount(uint count);
 
-signals:
+Q_SIGNALS:
     void transactionStarted(XTransaction *transaction);
     void transactionFinished(XTransaction *transaction);
 
 protected:
     void startEvent() override;
 
-protected slots:
+protected Q_SLOTS:
     void onTransactionFinished(XTransaction *transaction);
     void onTransactionProgressChanged(XTransaction *transaction, uint percentage);
     void runTransactionAtIndex(uint index);

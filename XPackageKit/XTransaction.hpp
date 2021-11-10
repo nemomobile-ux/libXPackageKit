@@ -39,7 +39,7 @@ public:
 
     bool runAfter(XTransaction *transaction);
 
-signals:
+Q_SIGNALS:
     void started(XTransaction *transaction);
     void finished(XTransaction *transaction);
     void failed(XTransaction *transaction, const QVariantHash &details);
@@ -50,11 +50,11 @@ signals:
 
     void statusChanged(XTransaction *transaction, XTransactionNamespace::TransactionStatus status);
 
-public slots:
+public Q_SLOTS:
     void restart();
     void start();
 
-protected slots:
+protected Q_SLOTS:
     void setFinished();
     void setFinishedWithError(const QVariantHash &details);
     void setDelayedFinishedWithError(const QVariantHash &details);
